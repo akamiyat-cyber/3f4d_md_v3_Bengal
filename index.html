@@ -409,7 +409,7 @@ function getBengaliDate(gregorianDateStr) {
     const date = new Date(gregorianDateStr);
     
     // Approximate Bengali Calendar (Adjusted for Bangladesh)
-    const bengaliMonths = ["Boishakh", "Joishtho", "Ashar", "Srabon", "Bhadro", "Ashshin", "Kartik", "Ogrohayon", "Poush", "Magh", "Falgun", "Chaitra"];
+    const bengaliMonths = ["বৈশাখ", "জ্যৈষ্ঠ", "আষাঢ়", "শ্রাবণ", "ভাদ্র", "আশ্বিন", "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাগুন", "চৈত্র"];
     const daysInMonth = [31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 30, 30];
     
     // Check for leap year for Falgun (index 10)
@@ -417,13 +417,13 @@ function getBengaliDate(gregorianDateStr) {
     const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
     if(isLeap) daysInMonth[10] = 31;
 
-    // Base date: April 14 is 1st Boishakh
-    let startOfBoishakh = new Date(year, 3, 14); // April 14
-    if(date < startOfBoishakh) {
-        startOfBoishakh = new Date(year - 1, 3, 14);
+    // Base date: April 14 is 1st বৈশাখ
+    let startOfবৈশাখ = new Date(year, 3, 14); // April 14
+    if(date < startOfবৈশাখ) {
+        startOfবৈশাখ = new Date(year - 1, 3, 14);
     }
 
-    const diffTime = date - startOfBoishakh;
+    const diffTime = date - startOfবৈশাখ;
     let dayOfYear = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // 0-based index
 
     let currentMonth = 0;
